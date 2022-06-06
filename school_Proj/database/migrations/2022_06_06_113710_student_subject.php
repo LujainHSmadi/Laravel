@@ -13,7 +13,7 @@ class StudentSubject extends Migration
      */
     public function up()
     {
-     Schema::create('subject_student', function (Blueprint $table) {
+     Schema::create('student_subject', function (Blueprint $table) {
     $table->id();
     $table->integer('subject_id')->unsigned();
     $table->integer('student_id')->unsigned();

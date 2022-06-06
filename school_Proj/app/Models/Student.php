@@ -14,6 +14,6 @@ class Student extends Model
      */
     public function getSubject()
     {
-        return $this->belongsToMany(getSubject::class);
+        return $this->belongsToMany(Subject::class);
     }
 }
