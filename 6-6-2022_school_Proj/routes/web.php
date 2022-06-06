@@ -13,5 +13,5 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('students/create','App\Http\Controllers\StudentController@create')->name('students.create');
+Route::get('students/{id}/edit','App\Http\Controllers\StudentController@edit')->name('students.edit');
 Route::get('students/{id}','App\Http\Controllers\StudentController@show')->name('students.show');

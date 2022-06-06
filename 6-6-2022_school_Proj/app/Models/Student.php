@@ -12,8 +12,8 @@ class Student extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function getSubject()
+    public function getCourses()
     {
-        return $this->belongsToMany(Subject::class);
+        return $this->belongsToMany(Course::class);
     }
 }
