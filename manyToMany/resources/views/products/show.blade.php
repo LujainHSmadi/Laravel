@@ -8,3 +8,7 @@
     <li>{{ $category->title }}</li>
     @endforeach
 </ul>
+{{-- select *, category.title 
+from Products 
+Inner join on categories
+where products.id = categories.id; --}}

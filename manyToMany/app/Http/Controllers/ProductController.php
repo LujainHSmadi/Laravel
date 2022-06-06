@@ -14,6 +14,12 @@ class ProductController extends Controller
         $product->price = 40;
 
         $product->save();
+        $product = new Product;
+
+        $product->name = 'football';
+        $product->price = 50;
+
+        $product->save();
 
         $category = Category::find([3, 4]);
         $product->categories()->attach($category);
@@ -24,7 +30,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
 {
-   
+   dd($product);
    return view('products.show', compact('product'));
 }
     //

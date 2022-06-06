@@ -13,9 +13,5 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-
-Route::get('product/create', 'App\Http\Controllers\ProductController@create')->name('product.create');
-Route::get('product/{product}', 'App\Http\Controllers\ProductController@show')->name('product.show');
-
-Route::get('student/create', 'App\Http\Controllers\StudentController@create')->name('student.create');
-Route::get('student/{student}', 'App\Http\Controllers\StudentController@show')->name('student.show');
+Route::get('students/create','App\Http\Controllers\StudentController@create')->name('students.create');
+Route::get('students/{id}','App\Http\Controllers\StudentController@show')->name('students.show');
