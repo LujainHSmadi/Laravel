@@ -4,6 +4,10 @@
   <div class="container">
     <h1 class="display-4">CRUD</h1>
     <p class="lead">This is CRUD for Customer.</p>
+          <form action="" method="post" class="container">
+                <a href="/customers/create" class="btn btn-primary">create</a>
+            </form>
+            <br>
   </div>
   <table class="table">
   <thead class="thead-dark">

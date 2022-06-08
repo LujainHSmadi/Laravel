@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +14,12 @@ use App\Http\Controllers\CustomerController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/customers', [CustomerController::class,'index']);
 Route::get('/customers/create', [CustomerController::class,'create']);
 Route::get('/customers/{id}/edit', [CustomerController::class,'edit']);
 Route::post('/customers', [CustomerController::class,'store']);
+Route::get('/home', 'TestController@index')->middleware('age');
+Route::get('/upload', 'TestController@uploadForm');
+Route::post('/upload', 'TestController@uploadFile')->name('upload.uploadFile');
