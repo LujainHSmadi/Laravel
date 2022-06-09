@@ -8,7 +8,7 @@
             <br>
             <div class='card container'>
                 <div class="card" style="width: 300px;">
-                <img src="{{$movie->movie_imag}}" class="card-img-top" alt="">
+                <img src="{{asset('/images/'.$movie->movie_imag)}}" class="card-img-top" alt="">
                 <div class="card-body text-center">
                     <h5 class="card-title">{{$movie->movie_name}}</h5>
                     <p class="card-text">{{$movie->movie_description}}</p>

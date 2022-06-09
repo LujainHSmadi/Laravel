@@ -33,7 +33,7 @@
       
 
       <td>
-        <img src="{{$movie->movie_imag}}" width="70px" height="70px" alt="">
+        <img src="{{asset('/images/'.$movie->movie_imag)}}" width="70px" height="70px" alt="">
       </td>
 
 

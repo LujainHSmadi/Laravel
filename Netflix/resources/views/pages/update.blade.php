@@ -1,8 +1,9 @@
 @extends('layout.app')
 @section('content')
 
-<form class="container" action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
+<form class="container" action="{{ route('movies.update',$movie->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
   <div class="form-group">
     <label for="Moviename">Movie name</label>
     <input type="text" name="movie_name" class="form-control" id="Moviename" value="{{$movie->movie_name}}">

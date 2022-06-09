@@ -14,3 +14,4 @@ use App\Http\Controllers\MovieController;
 */
 
 Route::resource('movies',  App\Http\Controllers\MovieController::class);
+Route::get('/search','App\Http\Controllers\MovieController@search');

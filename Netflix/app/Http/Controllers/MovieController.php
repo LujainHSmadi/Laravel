@@ -46,11 +46,14 @@ class MovieController extends Controller
         //     'movie_gener' => 'require',
         //     'movie_imag' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         // ]);
+        // $movie->movie_imag = $request->file('movie_imag')->store('public/images');
         $movie = new Movie();
         $movie->movie_name = $request->input('movie_name');
         $movie->movie_description = $request->input('movie_description');
         $movie->movie_gener = $request->input('movie_gener');
-        $movie->movie_imag = $request->file('movie_imag')->store('public/images');
+        $image = time().'-'.$request->movie_name.'.'.$request->movie_imag->extension(); 
+        $request->movie_imag->move(public_path('images'), $image);
+        $movie->movie_imag = $image;
         $movie->save();
         return redirect('/movies')->with('success', 'Movie has been Added!');
     }
@@ -114,4 +117,12 @@ class MovieController extends Controller
 
 
     }
+
+
+    public function search(){
+        $search = $_GET['query'];
+        $movies = Movies::where('movie_name','LIKE','%'. $search.'%')->get();
+        return view('movies.search')->with('movies',$movies);
+    }
+
 }
